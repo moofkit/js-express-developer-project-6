@@ -21,7 +21,6 @@ export default class FormStrategy extends Strategy {
     if (user && user.verifyPassword(password)) {
       return this.success(user);
     }
-
     return this.fail();
   }
 }
