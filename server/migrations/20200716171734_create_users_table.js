@@ -5,8 +5,8 @@ export const up = (knex) => (
     table.increments('id').primary();
     table.string('email');
     table.string('password_digest');
-    table.timestamp('created_at').defaultTo(knex.fn.now());
-    table.timestamp('updated_at').defaultTo(knex.fn.now());
+    table.string('firstname');
+    table.string('lastname');
   })
 );
 
