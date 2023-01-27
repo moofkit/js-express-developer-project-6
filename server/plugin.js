@@ -29,7 +29,8 @@ import FormStrategy from './lib/passportStrategies/FormStrategy.js';
 const __dirname = fileURLToPath(path.dirname(import.meta.url));
 
 const mode = process.env.NODE_ENV || 'development';
-// const isDevelopment = mode === 'development';
+// const mode = 'production';
+const isDevelopment = mode === 'development';
 
 const setUpViews = (app) => {
   const helpers = getHelpers(app);
@@ -102,7 +103,7 @@ const registerPlugins = async (app) => {
   app.decorate('authenticate', (...args) => fastifyPassport.authenticate(
     'form',
     {
-      failureRedirect: app.reverse('root'),
+      failureRedirect: app.reverse('/'),
       failureFlash: i18next.t('flash.authError'),
     },
   // @ts-ignore
