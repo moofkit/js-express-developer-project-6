@@ -20,6 +20,15 @@ export default {
         },
       },
       authError: 'Доступ запрещён! Пожалуйста, авторизируйтесь.',
+      edit: {
+        success: 'Данные успешно изменены',
+        error: 'Введены некорректные данные',
+        accessDenied: 'Нельзя изменять данные другого пользователя',
+        delete: {
+          success: 'Пользователь успешно удален',
+          error: 'Ошибка удаления пользователя',
+        }
+      },
     },
     layouts: {
       application: {
@@ -39,11 +48,20 @@ export default {
       users: {
         id: 'ID',
         email: 'Email',
-        createdAt: 'Дата создания',
+        firstname: 'Имя',
+        lastname: 'Фамилия',
         new: {
           submit: 'Сохранить',
           signUp: 'Регистрация',
         },
+        edit: {
+          change: 'Данные пользователя',
+          submit: 'Сохранить',
+          delete: 'Удалить пользователя',
+        },
+        table: {
+          edit: 'Изменить',
+        }
       },
       welcome: {
         index: {
