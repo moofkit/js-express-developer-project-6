@@ -1,0 +1,21 @@
+extends ../layouts/application.pug
+
+block content
+  table.table.table-striped
+    thead
+      tr
+        th= t('views.users.id')
+        th= t('views.users.email')
+        th= t('views.users.firstname')
+        th= t('views.users.lastname')
+    tbody
+      each user in users
+        tr
+          - const path = `/users/${user.id}/edit`
+          td= user.id
+          td= user.email
+          td= user.firstname
+          td= user.lastname
+          td
+            div.d-flex.flex-wrap
+              a.btn.btn-primary.me-1(href=path)= t('views.users.table.edit')

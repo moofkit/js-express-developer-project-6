@@ -1,0 +1,17 @@
+extends ../layouts/application.pug
+
+block header
+  = t('views.users.edit.change')
+
+block content
+  +formFor()(action=path method='post')
+    +input(name="_method" type="hidden" value="patch")
+    +input(user, 'firstname', errors)
+    +input(user, 'lastname', errors)(type='text')
+    +input(user, 'email', errors)(type="text")
+    +input(user, 'password', errors)(type="password")
+    +submit(user)(value=t('views.users.edit.submit'))
+  +formFor()(action=path method='post')
+    +input(name="_method" type="hidden" value="delete")
+    +submit()(value=t('views.users.edit.delete') style='background-color:#cf4040 ; border-color: #cf4040')
+    
