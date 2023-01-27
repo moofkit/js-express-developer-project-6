@@ -27,9 +27,11 @@ export const test = {
 };
 
 export const production = {
-  client: 'sqlite3',
+  client: 'pg',
   connection: {
-    filename: './database.sqlite',
+    database: 'task-manager',
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASS,
   },
   useNullAsDefault: true,
   migrations,
