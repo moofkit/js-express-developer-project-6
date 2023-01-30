@@ -29,9 +29,11 @@ export const test = {
 export const production = {
   client: 'pg',
   connection: {
-    database: 'task-manager',
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASS,
+    database: process.env.PGDATABASE,
+    host: process.env.PGHOST,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT
   },
   useNullAsDefault: true,
   migrations,
